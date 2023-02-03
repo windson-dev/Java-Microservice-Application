@@ -25,6 +25,7 @@ public class LessonModel implements Serializable {
 
     @Column(nullable = false, length = 150)
     private String title;
+
     @Column(nullable = false, length = 250)
     private String description;
 
@@ -37,6 +38,5 @@ public class LessonModel implements Serializable {
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @Fetch(FetchMode.SUBSELECT)
     private ModuleModel module;
 }
